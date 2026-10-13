@@ -1,0 +1,13 @@
+#==========================0
+#Aqui van los archivos que quiero que ignire 
+
+#DEPENDENCIAS
+#============================
+node_modules/
+
+#ARCHIVOS DEL SISTEMA 
+.DS_Store
+Thumbs.db
+
+#configuracion del edito 
+.vscode/
