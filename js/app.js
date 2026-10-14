@@ -1,4 +1,9 @@
+import { obtenerPaises } from "./api/countriesApi"
+
 console.log ("conexion exitosa")
+
+// IMPORT SUELE ESTAR HASTA ARRIBA 
+//impoort {obtenerPaises} from "./api/countriesApi.js.js"
 
 //REFERENCIAS DEL DOM
 const destinationContainer = document.querySelector('#destinations-container')
@@ -11,5 +16,5 @@ function init(){
 
 }
 
-//
+// INICIAR APP
 init()
