@@ -1,22 +1,30 @@
-// Crear comunicación con la api paises
-/*
-//1 obtener URL de la api
-const API_URL = 'https://juancognitus.github.io/explorador-viajes-api/paises.json'
+// Comunicación conla API de países
+// CONFIGURACIÓN DE LA API
 
-//2. expor me permite exportar mi funcion  lo que he manejado a otros archivos
-export async function obtenerPaises(){
-    //Realizar la petición a la api
-    const response = await fetch(API_URL)
-// si conozco las posibilidades de repsuesta puedo limitarlas
-   try{
-        if (response.ok){
-            throw new Error('Error HTT: ${response.status}')
-        }
-        
-        const result = await response.json()
-        const paises = result
-        return paises
+const API_URL =
+  'https://juancognitus.github.io/explorador-viajes-api/paises.json';
+
+export async function obtenerPaises() {
+  try {
+    //REALIZAR PETICIÓN HTTP
+    const respose = await fetch(API_URL);
+
+    // VALIDACIÓN RESPUESTA HTTP
+    if (!respose.ok) {
+      throw new Error(`Error HTTP: ${respose.status}`);
     }
-}
 
-*/
+    // CONVERTIR RESPUESTA A JSON
+    const result = await respose.json();
+
+    // OBTENER UN ARRAY DE PAÍSES
+    const paises = result;
+
+    // RETORNAMOS EL RESULTADO
+    return paises;
+  } catch (error) {
+    // MANEJO DE ERRORES
+    console.log('Error al obtener los paises: ', error);
+    return [];
+  }
+}
